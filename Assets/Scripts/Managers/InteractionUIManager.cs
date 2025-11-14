@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractionUIManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class InteractionUIManager : MonoBehaviour
     [Header("Referencias")]
     public CanvasGroup canvasGroup;
     public TextMeshProUGUI interactText;
+    public Image interactIcon;
 
     [Header("Animación")]
     public float fadeSpeed = 5f;
@@ -31,13 +33,25 @@ public class InteractionUIManager : MonoBehaviour
         canvasGroup.alpha = Mathf.MoveTowards(canvasGroup.alpha, targetAlpha, fadeSpeed * Time.deltaTime);
     }
 
-    public void Show(string text)
+    public void Show(string text, Sprite icon = null)
     {
-        if (text == currentText && isVisible) return;
+        isVisible = true;
+
+        if (interactIcon.sprite == icon && text == currentText && isVisible) return;
 
         currentText = text;
         interactText.text = text;
-        isVisible = true;
+        interactText.enabled = true;
+
+        if (icon != null)
+        {
+            interactIcon.enabled = true;
+            interactIcon.sprite = icon;
+        }
+        else
+        {
+            interactIcon.enabled = false;
+        }
     }
 
     public void Hide()

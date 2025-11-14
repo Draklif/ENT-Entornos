@@ -1513,7 +1513,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gdb-playstation-2_38
+      name: PS_Flat_North_1
       rect:
         serializedVersion: 2
         x: 16
@@ -1667,7 +1667,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gdb-playstation-2_55
+      name: PS_SM_Flat_North_1
       rect:
         serializedVersion: 2
         x: 448
@@ -1777,7 +1777,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gdb-playstation-2_60
+      name: PS_Flat_West_1
       rect:
         serializedVersion: 2
         x: 16
@@ -2063,7 +2063,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gdb-playstation-2_78
+      name: PS_SM_Flat_West_1
       rect:
         serializedVersion: 2
         x: 448
@@ -2173,7 +2173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gdb-playstation-2_83
+      name: PS_Flat_South_1
       rect:
         serializedVersion: 2
         x: 16
@@ -2459,7 +2459,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gdb-playstation-2_101
+      name: PS_SM_Flat_South_1
       rect:
         serializedVersion: 2
         x: 448
@@ -2569,7 +2569,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gdb-playstation-2_106
+      name: PS_Flat_East_1
       rect:
         serializedVersion: 2
         x: 16
@@ -2789,7 +2789,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gdb-playstation-2_124
+      name: PS_SM_Flat_East_1
       rect:
         serializedVersion: 2
         x: 448
@@ -12264,16 +12264,22 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
+      PS_Flat_East_1: 351510794228454426
+      PS_Flat_North_1: -5896703015419863314
+      PS_Flat_South_1: 3098450168213757956
+      PS_Flat_West_1: -6554066887853928920
+      PS_SM_Flat_East_1: -4145992567827485921
+      PS_SM_Flat_North_1: -8093994201590086513
+      PS_SM_Flat_South_1: -1216174808317641180
+      PS_SM_Flat_West_1: -2586155806711546193
       gdb-playstation-2_0: -6622840425070252312
       gdb-playstation-2_1: 5542618678065943756
       gdb-playstation-2_10: -3455890510757950218
       gdb-playstation-2_100: -8713705157976568284
-      gdb-playstation-2_101: -1216174808317641180
       gdb-playstation-2_102: 4353346351456209990
       gdb-playstation-2_103: -158061818326959226
       gdb-playstation-2_104: 2598330134238321031
       gdb-playstation-2_105: 2093313607597372953
-      gdb-playstation-2_106: 351510794228454426
       gdb-playstation-2_107: 4286270838342867390
       gdb-playstation-2_108: 7809983480206565248
       gdb-playstation-2_109: 7818751991576731506
@@ -12293,7 +12299,6 @@ TextureImporter:
       gdb-playstation-2_121: 308313951909240146
       gdb-playstation-2_122: 2974737058717444873
       gdb-playstation-2_123: 3340180727989358841
-      gdb-playstation-2_124: -4145992567827485921
       gdb-playstation-2_125: -4210514932661172635
       gdb-playstation-2_126: -2100638250414191274
       gdb-playstation-2_127: 8041063489539924576
@@ -12576,7 +12581,6 @@ TextureImporter:
       gdb-playstation-2_377: -6775726520580229747
       gdb-playstation-2_378: -2899018990376731475
       gdb-playstation-2_379: 5659181936900294142
-      gdb-playstation-2_38: -5896703015419863314
       gdb-playstation-2_380: -4756004416848989432
       gdb-playstation-2_381: 126990752930105729
       gdb-playstation-2_382: 5389448080128949511
@@ -12765,7 +12769,6 @@ TextureImporter:
       gdb-playstation-2_547: -72826315
       gdb-playstation-2_548: 407450862
       gdb-playstation-2_549: 617896613
-      gdb-playstation-2_55: -8093994201590086513
       gdb-playstation-2_550: 641889896
       gdb-playstation-2_551: 1372690558
       gdb-playstation-2_552: 945435009
@@ -12821,7 +12824,6 @@ TextureImporter:
       gdb-playstation-2_598: 439533055
       gdb-playstation-2_599: 1373445988
       gdb-playstation-2_6: -1688829546508403336
-      gdb-playstation-2_60: -6554066887853928920
       gdb-playstation-2_600: -1345272750
       gdb-playstation-2_601: -1233981816
       gdb-playstation-2_602: -906082188
@@ -12932,13 +12934,11 @@ TextureImporter:
       gdb-playstation-2_75: -3402133756801211589
       gdb-playstation-2_76: 8027847552896331250
       gdb-playstation-2_77: 6214683510053473728
-      gdb-playstation-2_78: -2586155806711546193
       gdb-playstation-2_79: 5579321388002529387
       gdb-playstation-2_8: 4595885250603308421
       gdb-playstation-2_80: -5321349501704225292
       gdb-playstation-2_81: 6896144368316095557
       gdb-playstation-2_82: 1830657043455045309
-      gdb-playstation-2_83: 3098450168213757956
       gdb-playstation-2_84: -1198526841080091814
       gdb-playstation-2_85: 8653240592996491715
       gdb-playstation-2_86: -3403092213230534094

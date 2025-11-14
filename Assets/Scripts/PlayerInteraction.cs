@@ -25,9 +25,12 @@ public class PlayerInteraction : MonoBehaviour
             if (interactable != null)
             {
                 currentTarget = interactable;
-                string key = GetInteractKey();
-                string uiText = $"[{key}] {interactable.GetInteractText()}";
-                InteractionUIManager.Instance.Show(uiText);
+
+                Sprite icon = GetInteractIcon();
+                string text = icon ? interactable.GetInteractText() : $"[{GetInteractKey()}] {interactable.GetInteractText()}";
+
+                InteractionUIManager.Instance.Show(text, icon);
+
                 return;
             }
         }
@@ -43,8 +46,12 @@ public class PlayerInteraction : MonoBehaviour
 
     string GetInteractKey()
     {
-        string binding = InputManager.Instance.GetBindingForAction("Player/Interact");
-        return binding ?? "E";
+        return InputManager.Instance.GetKeyName("Player/Interact") ?? "E";
+    }
+
+    Sprite GetInteractIcon()
+    {
+        return InputManager.Instance.GetKeyIcon("Player/Interact");
     }
 
     void OnDrawGizmosSelected()

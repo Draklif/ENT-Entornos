@@ -3,6 +3,7 @@ using UnityEngine;
 
 public enum GamepadType
 {
+    PC,
     Generic,
     Xbox,
     PlayStation,
@@ -19,20 +20,20 @@ public class GamepadIconMap : ScriptableObject
     {
         public string displayName;
         public string controlPath;
-        public string spriteTag;
+        public Sprite sprite;
     }
 
     public List<IconEntry> entries = new();
 
-    public string GetIcon(string path)
+    public Sprite GetIcon(string path)
     {
-        IconEntry entry = entries.Find(e => e.controlPath == path);
-        return entry != null ? entry.spriteTag : path;
+        IconEntry entry = entries.Find(e => e.controlPath.ToLower() == path.ToLower());
+        return entry != null ? entry.sprite : null;
     }
 
     public string GetName(string path)
     {
-        IconEntry entry = entries.Find(e => e.controlPath == path);
+        IconEntry entry = entries.Find(e => e.controlPath.ToLower() == path.ToLower());
         return entry != null ? entry.displayName : path;
     }
 }

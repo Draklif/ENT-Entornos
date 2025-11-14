@@ -82,51 +82,69 @@ public class InputManager : MonoBehaviour
         controls.Player.Disable();
     }
 
-    public string GetBindingForAction(string actionName)
+    public string GetKeyName(string actionName)
     {
-        InputAction action = controls.asset.FindAction(actionName);
+        InputBinding? binding = FindBindingForAction(actionName);
+        if (binding == null) return "";
+        return GetBindingName(binding.Value);
+    }
 
-        if (action == null) return "";
+    public Sprite GetKeyIcon(string actionName)
+    {
+        InputBinding? binding = FindBindingForAction(actionName);
+        if (binding == null) return null;
+        return GetBindingIcon(binding.Value);
+    }
 
-        if (CurrentDevice == null) CurrentDevice = Keyboard.current; // Si no detecta dispositivo, dejamos teclado
+    InputBinding? FindBindingForAction(string actionName)
+    {
+        var action = controls.asset.FindAction(actionName);
+        if (action == null) return null;
 
-        foreach (InputBinding binding in action.bindings)
+        CurrentDevice ??= Keyboard.current;
+
+        foreach (var binding in action.bindings)
         {
             if (binding.isComposite || binding.isPartOfComposite) continue;
 
-            if (CurrentDevice is Keyboard && binding.effectivePath.Contains("Keyboard"))
-            {
-                return binding.ToDisplayString();
-            }
-
-            if (CurrentDevice is Gamepad && binding.effectivePath.Contains("Gamepad"))
-            {
-                return GetGamepadIcon(binding);
-            }
+            if (BindingMatchesDevice(binding)) return binding;
         }
 
-        return action.GetBindingDisplayString();
+        return null;
+    }
+
+    bool BindingMatchesDevice(InputBinding binding)
+    {
+        string path = binding.effectivePath;
+
+        if (CurrentDevice is Keyboard) return path.Contains("Keyboard");
+
+        if (CurrentDevice is Gamepad) return path.Contains("Gamepad");
+
+        return false;
     }
 
     private GamepadIconMap GetMapForCurrentDevice()
     {
-        if (Gamepad.current == null) return null;
+        if (CurrentDevice is Keyboard) return gamepadMaps.Find(m => m.gamepadType == GamepadType.PC);
 
-        if (Gamepad.current is DualShockGamepad) return gamepadMaps.Find(m => m.gamepadType == GamepadType.PlayStation);
+        if (CurrentGamepad is DualShockGamepad) return gamepadMaps.Find(m => m.gamepadType == GamepadType.PlayStation);
 
-        if (Gamepad.current is XInputController) return gamepadMaps.Find(m => m.gamepadType == GamepadType.Xbox);
-
-        if (Gamepad.current is XInputControllerWindows) return gamepadMaps.Find(m => m.gamepadType == GamepadType.Xbox);
+        if (CurrentGamepad is XInputController or XInputControllerWindows) return gamepadMaps.Find(m => m.gamepadType == GamepadType.Xbox);
 
         return gamepadMaps.Find(m => m.gamepadType == GamepadType.Generic);
     }
 
-    private string GetGamepadIcon(InputBinding binding)
+    string GetBindingName(InputBinding binding)
     {
-        string path = binding.effectivePath;
         GamepadIconMap map = GetMapForCurrentDevice();
+        return map?.GetName(binding.effectivePath);
+    }
 
-        return map != null ? map.GetIcon(path) != "" ? map.GetIcon(path) : map.GetName(path) : map.GetName(path);
+    Sprite GetBindingIcon(InputBinding binding)
+    {
+        GamepadIconMap map = GetMapForCurrentDevice();
+        return map?.GetIcon(binding.effectivePath);
     }
 
 }
