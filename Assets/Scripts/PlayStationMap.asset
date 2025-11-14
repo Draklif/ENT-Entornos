@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd6d1ad2b88add498846d849e9aee96, type: 3}
   m_Name: PlayStationMap
   m_EditorClassIdentifier: Assembly-CSharp::GamepadIconMap
-  gamepadType: 2
+  gamepadType: 3
   entries:
   - displayName: X
     controlPath: <Gamepad>/buttonSouth
-    spriteTag: 
+    sprite: {fileID: 0}
   - displayName: Triangle
     controlPath: <Gamepad>/buttonNorth
-    spriteTag: 
+    sprite: {fileID: 0}
   - displayName: Circle
     controlPath: <Gamepad>/buttonEast
-    spriteTag: 
+    sprite: {fileID: 0}
   - displayName: Square
     controlPath: <Gamepad>/buttonWest
-    spriteTag: 
+    sprite: {fileID: -6554066887853928920, guid: a478241cdf49243449e1f260c1a7654b, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd6d1ad2b88add498846d849e9aee96, type: 3}
   m_Name: XboxMap
   m_EditorClassIdentifier: Assembly-CSharp::GamepadIconMap
-  gamepadType: 1
+  gamepadType: 2
   entries:
   - displayName: A
     controlPath: <Gamepad>/buttonSouth
@@ -25,4 +25,4 @@ MonoBehaviour:
     sprite: {fileID: 0}
   - displayName: X
     controlPath: <Gamepad>/buttonWest
-    sprite: {fileID: 8603364596459411821, guid: 7b20931423898914782e017d84529cac, type: 3}
+    sprite: {fileID: 0}
