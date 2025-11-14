@@ -116,6 +116,8 @@ public class InputManager : MonoBehaviour
 
         if (Gamepad.current is XInputController) return gamepadMaps.Find(m => m.gamepadType == GamepadType.Xbox);
 
+        if (Gamepad.current is XInputControllerWindows) return gamepadMaps.Find(m => m.gamepadType == GamepadType.Xbox);
+
         return gamepadMaps.Find(m => m.gamepadType == GamepadType.Generic);
     }
 

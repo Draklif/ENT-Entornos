@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd6d1ad2b88add498846d849e9aee96, type: 3}
   m_Name: XboxMap
   m_EditorClassIdentifier: Assembly-CSharp::GamepadIconMap
-  gamepadType: 2
+  gamepadType: 1
   entries:
   - displayName: A
     controlPath: <Gamepad>/buttonSouth
